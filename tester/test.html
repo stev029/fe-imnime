@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <title>Tester</title>
+</head>
+
+<body>
+    <div class="wrapper">
+        <h1>asdas</h1>
+        <div class="btn">
+            <button class="pre-btn"><</button>
+            <button class="nxt-btn">></button>
+        </div>
+        <div class="content" style="transform: translate3d(0%, 0px, 0px);">
+            <p class="content-body selected">Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit voluptatum corporis molestiae dolores vero,
+                voluptate ex sapiente unde. Dolor consequatur nostrum sapiente expedita soluta eum modi quam quod
+                eligendi magnam!</p>
+            <p class="content-body selected">Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit voluptatum corporis molestiae dolores vero,
+                voluptate ex sapiente unde. Dolor consequatur nostrum sapiente expedita soluta eum modi quam quod
+                eligendi magnam!</p>
+            <p class="content-body selected">Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit voluptatum corporis molestiae dolores vero,
+                voluptate ex sapiente unde. Dolor consequatur nostrum sapiente expedita soluta eum modi quam quod
+                eligendi magnam!</p>
+            <p class="content-body selected">Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit voluptatum corporis molestiae dolores vero,
+                voluptate ex sapiente unde. Dolor consequatur nostrum sapiente expedita soluta eum modi quam quod
+                eligendi magnam!</p>
+            <p class="content-body selected">Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit voluptatum corporis molestiae dolores vero,
+                voluptate ex sapiente unde. Dolor consequatur nostrum sapiente expedita soluta eum modi quam quod
+                eligendi magnam!</p>
+            <p class="content-body">Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit voluptatum corporis molestiae dolores vero,
+                voluptate ex sapiente unde. Dolor consequatur nostrum sapiente expedita soluta eum modi quam quod
+                eligendi magnam!</p>
+            <p class="content-body">Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit voluptatum corporis molestiae dolores vero,
+                voluptate ex sapiente unde. Dolor consequatur nostrum sapiente expedita soluta eum modi quam quod
+                eligendi magnam!</p>
+        </div>
+    </div>
+    <script>
+        const contentCon = [...document.querySelectorAll(".content")]
+        const nxtBtn = [...document.querySelectorAll('.nxt-btn')]
+        const preBtn = [...document.querySelectorAll('.pre-btn')]
+
+        contentCon.forEach((item, i) => {
+            let containerDim = item.getBoundingClientRect()
+            let containerWitdh = containerDim.width
+            console.log(item)
+            console.log(containerDim)
+            console.log(containerWitdh)
+
+            nxtBtn[i].addEventListener('click', () => {
+                item.scrollLeft += containerWitdh;
+            })
+            preBtn[i].addEventListener('click', () => {
+                item.scrollLeft -= containerWitdh;
+            })
+        })
+    </script>
+</body>
+
+</html>
